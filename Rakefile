@@ -43,3 +43,9 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+desc "Start the test server"
+task :start_test_server do
+  require 'features/support/webrick_server'
+  TestServer.new
+end
